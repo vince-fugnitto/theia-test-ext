@@ -7,7 +7,7 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.showInformationMessage('Creating File...');
 		let workspaceEdit = new vscode.WorkspaceEdit();
 		const workspacePath = vscode.workspace.workspaceFolders![0];
-		let pathUri = vscode.Uri.file(workspacePath.uri.fsPath + '/test.txt');
+		let pathUri = vscode.Uri.file(workspacePath.uri.fsPath + '/test/test.txt');
 		workspaceEdit.createFile(pathUri);
 		vscode.workspace.applyEdit(workspaceEdit).then(() => {
 			writeFileSync(pathUri.fsPath, 'TEST CONTENT\n');
